@@ -207,75 +207,6 @@ h1,h2,h3{
   box-shadow:0 25px 60px rgba(10,31,68,.06);
 }
 
-/* =========================
-   WHY CHOOSE US
-========================= */
-.whyGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.whyCard{
-  padding:26px;
-  border-radius:22px;
-
-  background:linear-gradient(
-    135deg,
-    rgba(10,31,68,.95) 0%,
-    rgba(10,31,68,.85) 50%,
-    rgba(115,199,255,.40) 100%
-  );
-
-  color:#fff;
-  border:1px solid rgba(115,199,255,.55);
-  box-shadow:0 40px 80px rgba(10,31,68,.25);
-
-  transform:translateY(18px);
-  opacity:0;
-  transition:.6s ease;
-}
-
-.whyCard:hover{
-  transform:translateY(-8px);
-  box-shadow:0 55px 110px rgba(10,31,68,.35);
-}
-
-.whyIcon{
-  width:52px;
-  height:52px;
-  border-radius:18px;
-  display:grid;
-  place-items:center;
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.35);
-  margin-bottom:14px;
-  font-weight:900;
-}
-
-.whyTitle{
-  font-size:20px;
-  margin-bottom:10px;
-  color:#fff;
-}
-
-.whyText{
-  color:#e6f2ff;
-  margin-bottom:14px;
-  line-height:1.6;
-}
-
-.whyLink{
-  color:#fff;
-  font-weight:900;
-  display:inline-flex;
-  gap:8px;
-}
-
-.reveal.is-inview{
-  opacity:1;
-  transform:translateY(0);
-}
 
 /* =========================
    FOOTER
@@ -314,67 +245,6 @@ h1,h2,h3{
     flex-wrap:wrap;
     justify-content:flex-end;
   }
-}
-/* =========================
-   WHY CHOOSE US – PREMIUM ANIMATIONS
-========================= */
-
-/* smoother reveal */
-.whyCard{
-  position:relative;
-  overflow:hidden;
-  transform: translateY(24px) scale(.98);
-  opacity: 0;
-  transition:
-    opacity .75s ease,
-    transform .75s cubic-bezier(.2,.85,.2,1),
-    box-shadow .25s ease;
-}
-
-/* revealed state */
-.whyCard.is-inview{
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* subtle ambient glow */
-.whyCard::before{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background: radial-gradient(circle at 20% 20%, rgba(115,199,255,.25), transparent 55%);
-  opacity:0;
-  transform: rotate(12deg);
-  transition: opacity .35s ease;
-  pointer-events:none;
-}
-
-/* border sweep hover */
-.whyCard::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(120deg, transparent 30%, rgba(115,199,255,.20), transparent 70%);
-  transform: translateX(-130%);
-  transition: transform .9s ease;
-  pointer-events:none;
-}
-
-/* hover animation */
-.whyCard:hover{
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 65px 120px rgba(10,31,68,.35);
-}
-.whyCard:hover::before{ opacity:1; }
-.whyCard:hover::after{ transform: translateX(130%); }
-
-/* icon pulse */
-.whyIcon{
-  animation: iconFloat 4.5s ease-in-out infinite;
-}
-@keyframes iconFloat{
-  0%,100%{ transform: translateY(0); }
-  50%{ transform: translateY(-6px); }
 }
 
 /* =========================
@@ -2662,79 +2532,6 @@ img { max-width: 100%; display: block; }
   transform: translateY(0);
 }
 
-/* =========================
-   WHY CHOOSE US
-========================= */
-.whyChooseWrap{
-  background: #fff;
-  border-radius: 26px;
-  padding: 56px 44px;
-  border: 1px solid rgba(10,31,68,.08);
-  box-shadow: 0 28px 80px rgba(10,31,68,.10);
-}
-
-.whyChooseTitle{
-  text-align:center;
-  margin: 0 0 26px 0;
-  font-size: 34px;
-  color: #0b1f3a;
-  font-weight: 900;
-}
-
-.whyChooseGrid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.whyCard{
-  border-radius: 20px;
-  padding: 18px 18px;
-  background: linear-gradient(180deg, rgba(127,208,255,.20), rgba(255,255,255,.95));
-  border: 1px solid rgba(11,42,87,.10);
-  box-shadow: 0 16px 45px rgba(10,31,68,.08);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.whyCard:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 24px 70px rgba(10,31,68,.14);
-}
-
-.whyIcon{
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: rgba(127,208,255,.35);
-  border: 1px solid rgba(11,42,87,.12);
-  font-weight: 900;
-  color: #0b2a57;
-  margin-bottom: 12px;
-}
-
-.whyCard h3{
-  margin: 0 0 8px 0;
-  color: #0b1f3a;
-  font-weight: 900;
-}
-
-.whyCard p{
-  margin: 0;
-  color: #50627c;
-  line-height: 1.55;
-  font-weight: 600;
-}
-
-/* Responsive */
-@media (max-width: 900px){
-  .whyChooseGrid{ grid-template-columns: 1fr; }
-  .whyChooseWrap{ padding: 36px 18px; }
-  .whyChooseTitle{ font-size: 28px; }
-}
 
 /* =========================
    FOOTER
@@ -2827,4 +2624,465 @@ img { max-width: 100%; display: block; }
 .js .revealUp.is-in{
   opacity: 1;
   transform: translateY(0);
+}
+/* =========================
+   HOME GALLERY (DEBUG + MOSAIC 20)
+========================= */
+
+.homeGallery .sectionHead{ margin-bottom: 22px; }
+
+.galleryGrid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:18px;
+}
+
+/* card */
+.galleryItem{
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0b1b3a; /* fallback */
+  border: 1px solid rgba(10,31,68,.10);
+  box-shadow: 0 18px 45px rgba(10,20,40,.10);
+
+  /* FORCE VISIBLE (kills any old reveal conflicts) */
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* image */
+.galleryItem img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* label (to prove element exists even if image fails) */
+.galleryLabel{
+  position:absolute;
+  left:12px;
+  top:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(10,31,68,.12);
+  color:#0b2a57;
+}
+
+/* if image fails */
+.galleryItem.img-fail{
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,.10),
+    rgba(255,255,255,.10) 12px,
+    rgba(255,255,255,.06) 12px,
+    rgba(255,255,255,.06) 24px
+  );
+}
+.galleryItem.img-fail::after{
+  content: "IMAGE NOT FOUND (check path/extension)";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  padding:10px 12px;
+  border-radius:14px;
+  background: rgba(10,31,68,.85);
+  color:#fff;
+  font-weight:900;
+  font-size:12px;
+}
+
+/* ===== MOSAIC LAYOUT ===== */
+/* Row 1: 2 big */
+.galleryItem:nth-child(1),
+.galleryItem:nth-child(2){
+  grid-column: span 6;
+  aspect-ratio: 16/8;
+}
+
+/* Row 2: 3 medium */
+.galleryItem:nth-child(3),
+.galleryItem:nth-child(4),
+.galleryItem:nth-child(5){
+  grid-column: span 4;
+  aspect-ratio: 16/10;
+}
+
+/* Row 3: 4 small */
+.galleryItem:nth-child(6),
+.galleryItem:nth-child(7),
+.galleryItem:nth-child(8),
+.galleryItem:nth-child(9){
+  grid-column: span 3;
+  aspect-ratio: 1/1;
+}
+
+/* Row 4: 2 big */
+.galleryItem:nth-child(10),
+.galleryItem:nth-child(11){
+  grid-column: span 6;
+  aspect-ratio: 16/9;
+}
+
+/* Row 5: 3 medium */
+.galleryItem:nth-child(12),
+.galleryItem:nth-child(13),
+.galleryItem:nth-child(14){
+  grid-column: span 4;
+  aspect-ratio: 16/10;
+}
+
+/* rest */
+.galleryItem:nth-child(n+15){
+  grid-column: span 3;
+  aspect-ratio: 1/1;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .galleryGrid{ grid-template-columns: repeat(6, 1fr); }
+  .galleryItem{ grid-column: span 3 !important; aspect-ratio: 1/1 !important; }
+  .galleryItem:nth-child(1),
+  .galleryItem:nth-child(2){
+    grid-column: span 6 !important;
+    aspect-ratio: 16/9 !important;
+  }
+}
+
+@media (max-width: 520px){
+  .galleryGrid{ grid-template-columns: repeat(2, 1fr); }
+  .galleryItem{ grid-column: span 2 !important; aspect-ratio: 16/10 !important; }
+}
+
+/* =========================================
+   WHY CHOOSE US (HOME) — Same as screenshot + animations
+   Put this at the END of style.css
+========================================= */
+
+/* section wrap card (big white rounded container) */
+.whyWrap{
+  margin-top: 18px;
+}
+
+.whyWrap > .whyCard{
+  background: #fff;
+  border-radius: 34px;
+  padding: 54px 44px;
+  border: 1px solid rgba(10, 31, 68, .07);
+  box-shadow:
+    0 30px 90px rgba(10, 31, 68, .08),
+    inset 0 1px 0 rgba(255,255,255,.7);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle inner glow like screenshot */
+.whyWrap > .whyCard::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(115,199,255,.18), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(115,199,255,.10), transparent 60%);
+  pointer-events:none;
+  opacity:.85;
+}
+
+/* title */
+.whyTitle{
+  position: relative;
+  text-align:center;
+  margin: 0 0 28px 0;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -.8px;
+  color: #0b1f3a;
+}
+
+/* grid = 3 cards only */
+.whyGrid{
+  position: relative;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 10px;
+}
+
+/* hide extra items after 3 (so it's EXACTLY like screenshot) */
+.whyGrid > .whyItem:nth-child(n+4){
+  display:none;
+}
+
+/* each card */
+.whyItem{
+  position: relative;
+  border-radius: 26px;
+  padding: 26px 26px 24px;
+  background:
+    linear-gradient(180deg, rgba(115,199,255,.22), rgba(255,255,255,.95));
+  border: 1px solid rgba(115,199,255,.22);
+  box-shadow:
+    0 26px 70px rgba(10, 31, 68, .10),
+    inset 0 1px 0 rgba(255,255,255,.85);
+  display:flex;
+  gap: 16px;
+  align-items:flex-start;
+
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* light shine sweep (hover) */
+.whyItem::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35), transparent 70%);
+  transform: translateX(-140%);
+  transition: transform .9s ease;
+  pointer-events:none;
+}
+
+.whyItem:hover{
+  transform: translateY(-8px);
+  border-color: rgba(115,199,255,.35);
+  box-shadow:
+    0 40px 95px rgba(10, 31, 68, .14),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.whyItem:hover::after{
+  transform: translateX(140%);
+}
+
+/* icon square (top-left) */
+.whyIcon{
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(115,199,255,.28);
+  border: 1px solid rgba(115,199,255,.35);
+  box-shadow: 0 14px 30px rgba(10,31,68,.08);
+  font-size: 20px;
+  color: #0b2a57;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+/* icon soft pulse */
+@keyframes whyIconPulse{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+}
+.whyItem:hover .whyIcon{
+  animation: whyIconPulse 1.3s ease-in-out infinite;
+}
+
+.whyItem h3{
+  margin: 6px 0 8px 0;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -.3px;
+  color: #0b1f3a;
+}
+
+.whyItem p{
+  margin: 0;
+  color: rgba(11, 31, 58, .68);
+  font-weight: 700;
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* CTA (if you keep it) */
+.whyCTA{
+  position: relative;
+  display:flex;
+  gap: 12px;
+  justify-content:center;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   REVEAL ANIMATION (same behavior)
+   - visible by default
+   - animate only when html has class="js"
+========================= */
+
+/* default visible (no empty section) */
+.revealUp{
+  opacity: 1;
+  transform: none;
+}
+
+/* animate only when JS enabled */
+html.js .revealUp{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .75s ease, transform .75s cubic-bezier(.2,.85,.2,1);
+  will-change: opacity, transform;
+}
+
+html.js .revealUp.is-in{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger effect for the 3 cards */
+html.js .whyGrid .whyItem.revealUp:nth-child(1){ transition-delay: 0ms; }
+html.js .whyGrid .whyItem.revealUp:nth-child(2){ transition-delay: 90ms; }
+html.js .whyGrid .whyItem.revealUp:nth-child(3){ transition-delay: 180ms; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .whyWrap > .whyCard{ padding: 40px 22px; border-radius: 28px; }
+  .whyTitle{ font-size: 34px; }
+  .whyGrid{ grid-template-columns: 1fr; gap: 16px; }
+  .whyGrid > .whyItem:nth-child(n+4){ display:none; } /* still 3 only */
+  .whyItem{ padding: 20px; border-radius: 22px; }
+  .whyItem h3{ font-size: 20px; }
+}
+
+@media (max-width: 520px){
+  .whyTitle{ font-size: 28px; }
+  .whyIcon{ width: 48px; height: 48px; border-radius: 16px; }
+}
+
+/* =========================
+   SHOP GALLERY – PREMIUM ANIMATIONS
+========================= */
+
+.shopGallery{
+  margin-top: 18px;
+}
+
+.galleryGrid{
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* Tile */
+.galleryItem{
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0b1b3a;
+  border: 1px solid rgba(10,31,68,.10);
+  box-shadow: 0 20px 55px rgba(10,31,68,.10);
+
+  /* reveal base */
+  opacity: 0;
+  transform: translateY(18px) scale(.985);
+  transition:
+    opacity .65s ease,
+    transform .65s cubic-bezier(.2,.9,.2,1),
+    box-shadow .35s ease,
+    border-color .35s ease;
+  transition-delay: calc(var(--d, 0) * 55ms);
+  will-change: transform, opacity;
+}
+
+/* When revealed */
+.galleryItem.is-in{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Image */
+.galleryItem img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.02);
+  filter: saturate(1.02) contrast(1.03);
+  transition: transform .7s ease, filter .7s ease;
+}
+
+/* Hover lift */
+.galleryItem:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 30px 80px rgba(10,31,68,.16);
+  border-color: rgba(115,199,255,.40);
+}
+
+.galleryItem:hover img{
+  transform: scale(1.08);
+  filter: saturate(1.08) contrast(1.06);
+}
+
+/* Shine sweep */
+.galleryItem::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(255,255,255,.18) 45%,
+    transparent 75%
+  );
+  transform: translateX(-130%);
+  transition: transform .9s ease;
+  pointer-events:none;
+  opacity:.9;
+}
+
+.galleryItem:hover::after{
+  transform: translateX(130%);
+}
+
+/* Layout: first row 2 big like your screenshot */
+.galleryItem:nth-child(1),
+.galleryItem:nth-child(2){
+  grid-column: span 6;
+  aspect-ratio: 16 / 8;
+}
+
+.galleryItem:nth-child(n+3){
+  grid-column: span 4;
+  aspect-ratio: 16 / 10;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .galleryGrid{ grid-template-columns: repeat(6, 1fr); }
+
+  .galleryItem:nth-child(1),
+  .galleryItem:nth-child(2){
+    grid-column: span 6;
+    aspect-ratio: 16 / 9;
+  }
+
+  .galleryItem:nth-child(n+3){
+    grid-column: span 3;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 640px){
+  .galleryGrid{ grid-template-columns: 1fr; }
+  .galleryItem{
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .galleryItem, .galleryItem img{
+    transition: none !important;
+  }
+  .galleryItem{
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

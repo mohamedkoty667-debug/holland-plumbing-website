@@ -38,36 +38,142 @@
 </section>
 
 
+<section class="section homeGallery">
+  <div class="container">
+    <div class="sectionHead">
+      <h2 class="h2">Our Shop</h2>
+      <p class="muted">A quick look at recent plumbing & bathroom materials.</p>
+    </div>
+
+    <% const BASE_PATH = "/image/shop"; %>  <% /* غيّرها لو فولدر مختلف */ %>
+
+    <div class="galleryGrid">
+      <% for(let i = 1; i <= 20; i++) { %>
+        <button class="galleryItem" type="button" aria-label="Open shop photo <%= i %>">
+          <img
+            src="<%= BASE_PATH %>/<%= i %>.jpg"
+            alt="Shop photo <%= i %>"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.classList.add('img-fail');"
+          >
+        </button>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const items = document.querySelectorAll(".galleryItem");
+  if(!items.length) return;
+
+  if(!("IntersectionObserver" in window)){
+    items.forEach(el => el.classList.add("is-in"));
+    return;
+  }
+
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add("is-in");
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.15});
+
+  items.forEach(el => io.observe(el));
+})();
+</script>
+
+
 <!-- =========================
         WHY CHOOSE US
 ========================= -->
 <section class="section">
   <div class="container">
-    <div class="whyChooseWrap">
-      <h2 class="whyChooseTitle">Why Choose Us</h2>
+    <div class="whyWrap revealUp">
+      <div class="whyCard">
+        <h2 class="h2 whyTitle">Why Choose Us</h2>
 
-      <div class="whyChooseGrid">
-        <div class="whyCard revealUp">
-          <div class="whyIcon">✓</div>
-          <h3>Tidy workmanship</h3>
-          <p>We protect surfaces, clean up properly, and finish the job neatly — no mess left behind.</p>
+        <div class="whyGrid">
+          <div class="whyItem revealUp">
+            <div class="whyIcon">⚡</div>
+            <div>
+              <h3>Fast response</h3>
+              <p>Quick scheduling and clear updates.</p>
+            </div>
+          </div>
+
+          <div class="whyItem revealUp">
+            <div class="whyIcon">🧼</div>
+            <div>
+              <h3>Clean workmanship</h3>
+              <p>We protect surfaces and clean up after the job.</p>
+            </div>
+          </div>
+
+          <div class="whyItem revealUp">
+            <div class="whyIcon">✅</div>
+            <div>
+              <h3>Trusted parts</h3>
+              <p>Quality brands to reduce failures and call-backs.</p>
+            </div>
+          </div>
+
+          <div class="whyItem revealUp">
+            <div class="whyIcon">📍</div>
+            <div>
+              <h3>London coverage</h3>
+              <p>Serving London & surrounding areas.</p>
+            </div>
+          </div>
+
+          <div class="whyItem revealUp">
+            <div class="whyIcon">🛠️</div>
+            <div>
+              <h3>Proper diagnosis</h3>
+              <p>We find the cause, not just the symptom.</p>
+            </div>
+          </div>
+
+          <div class="whyItem revealUp">
+            <div class="whyIcon">💬</div>
+            <div>
+              <h3>WhatsApp support</h3>
+              <p>Send photos/videos for a faster quote.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="whyCard revealUp">
-          <div class="whyIcon">£</div>
-          <h3>Clear pricing</h3>
-          <p>We explain the issue and options before we start, so you know what you’re paying for.</p>
-        </div>
-
-        <div class="whyCard revealUp">
-          <div class="whyIcon">★</div>
-          <h3>Quality parts</h3>
-          <p>We use trusted brands and reliable fittings to reduce failures and avoid repeat callouts.</p>
+        <div class="whyCTA revealUp">
+          <a class="btn btnPrimary" href="/make-an-order">Make an Order</a>
+          <a class="btn btnSoft" href="<%= waLink %>" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Reveal animation on scroll (safe - won't break other pages)
+  (function () {
+    const els = document.querySelectorAll(".revealUp");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(el => el.classList.add("is-in"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
 
 
 <!-- =========================
