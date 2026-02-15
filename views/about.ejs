@@ -1,0 +1,148 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+<!-- =========================
+        ABOUT HERO
+========================= -->
+<section class="aboutHero">
+  <div class="container aboutHero__grid">
+    <div class="aboutHero__content">
+      <span class="aboutBadge">About</span>
+      <h1>Trusted plumbing & bathroom work across London</h1>
+      <p class="aboutLead">
+        <strong><%= site.name %></strong> provides plumbing and bathroom services with a focus on
+        reliability, clean workmanship, and trusted parts — for homes and businesses.
+      </p>
+
+      <div class="aboutHero__stats">
+        <div class="stat">
+          <div class="stat__num">24/7</div>
+          <div class="stat__label">By appointment</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">London</div>
+          <div class="stat__label">& surrounding areas</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">Quality</div>
+          <div class="stat__label">Trusted brands</div>
+        </div>
+      </div>
+
+      <div class="aboutHero__actions">
+        <a class="btn btn--primary" href="/make-an-order">Make an Order</a>
+        <a class="btn btn--secondary" href="/plumbing-services">View Services</a>
+      </div>
+    </div>
+
+    <!-- Images (slide in from right) -->
+    <div class="aboutHero__media reveal-right" data-delay="0">
+      <div class="aboutMedia">
+        <img src="/image/about/about-1.jpg" alt="Plumbing work" class="aboutImg aboutImg--main">
+        <img src="/image/about/about-2.jpg" alt="Bathroom installation" class="aboutImg aboutImg--top">
+        <img src="/image/about/about-3.jpg" alt="Tools and fittings" class="aboutImg aboutImg--bottom">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+        WHO WE ARE
+========================= -->
+<section class="section aboutSection">
+  <div class="container aboutSplit">
+    <div class="aboutBox">
+      <h2>Who we are</h2>
+      <p class="muted">
+        We’re a local plumbing and bathroom team focused on doing the job properly:
+        clear communication, tidy finishes, and reliable parts that last.
+      </p>
+
+      <div class="aboutList">
+        <div class="aboutList__item">
+          <span class="dot"></span>
+          <div>
+            <strong>Fast response</strong>
+            <p class="muted">Clear updates and quick scheduling whenever possible.</p>
+          </div>
+        </div>
+
+        <div class="aboutList__item">
+          <span class="dot"></span>
+          <div>
+            <strong>Clean workmanship</strong>
+            <p class="muted">We protect surfaces, keep things tidy, and clean up after work.</p>
+          </div>
+        </div>
+
+        <div class="aboutList__item">
+          <span class="dot"></span>
+          <div>
+            <strong>Trusted materials</strong>
+            <p class="muted">Quality parts from known brands to reduce failures and call-backs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutBox reveal-right" data-delay="120">
+      <h2>How we work</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div>
+            <strong>Quick assessment</strong>
+            <p class="muted">Tell us what’s happening — photos/videos help a lot.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">2</div>
+          <div>
+            <strong>Clear quote</strong>
+            <p class="muted">We explain options and give a clear plan before starting.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">3</div>
+          <div>
+            <strong>Quality finish</strong>
+            <p class="muted">Neat installation, tested properly, and clean handover.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+        VALUES (CARDS)
+========================= -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">What we stand for</h2>
+
+    <div class="aboutCards">
+      <div class="aboutCard reveal" data-delay="0">
+        <div class="aboutCard__icon">✓</div>
+        <h3>Professional approach</h3>
+        <p class="muted">Clear communication, tidy work, and practical solutions.</p>
+      </div>
+
+      <div class="aboutCard reveal" data-delay="120">
+        <div class="aboutCard__icon">★</div>
+        <h3>Quality materials</h3>
+        <p class="muted">We use trusted brands to reduce failures and call-backs.</p>
+      </div>
+
+      <div class="aboutCard reveal" data-delay="240">
+        <div class="aboutCard__icon">♥</div>
+        <h3>Customer-first</h3>
+        <p class="muted">We respect your time and property, aiming for long-term satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

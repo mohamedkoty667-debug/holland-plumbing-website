@@ -1,0 +1,103 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+<!-- =========================
+        CONTACT HERO
+========================= -->
+<section class="contactHero">
+  <div class="contactHero__bg"></div>
+
+  <div class="container contactHero__wrap">
+    <div class="contactHero__card">
+      <span class="contactBadge">Contact Us</span>
+      <h1>We’re here to help</h1>
+      <p>
+        For plumbing repairs, bathroom upgrades, or parts enquiries,
+        contact us directly or send details on WhatsApp.
+      </p>
+
+      <div class="contactButtons">
+        <a href="/make-an-order" class="btn btn--primary">Make an Order</a>
+        <a href="<%= waLink %>" target="_blank" class="btn btn--secondary">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+        CONTACT CONTENT
+========================= -->
+<section class="section">
+  <div class="container contactGrid">
+
+    <!-- LEFT PANEL -->
+    <div class="contactCard">
+      <h2>Company Details</h2>
+
+      <div class="infoRow">
+        <strong>Phone:</strong>
+        <a href="<%= telLink %>"><%= site.phone %></a>
+      </div>
+
+      <div class="infoRow">
+        <strong>WhatsApp:</strong>
+        <a href="<%= waLink %>" target="_blank"><%= site.whatsapp %></a>
+      </div>
+
+      <div class="infoRow">
+        <strong>Address:</strong>
+        8 Swanscombe Rd, London W11 4SX, UK
+      </div>
+
+      <div class="infoRow">
+        <strong>Service Area:</strong>
+        <%= site.serviceArea %>
+      </div>
+
+      <div class="infoRow">
+        <strong>Hours:</strong>
+        <%= site.hours %>
+      </div>
+
+      <div class="infoRow">
+        <strong>Company No:</strong>
+        <%= site.companyNumber %>
+      </div>
+
+      <div class="infoRow">
+        <strong>VAT:</strong>
+        <%= site.vat %>
+      </div>
+
+      <a href="/make-an-order" class="btn btn--primary btn--block">
+        Start an Order
+      </a>
+    </div>
+
+
+    <!-- RIGHT PANEL (MAP) -->
+    <div class="contactCard">
+      <h2>Our Location</h2>
+
+      <div class="mapWrapper">
+        <iframe
+          src="https://www.google.com/maps?q=8%20Swanscombe%20Rd,%20London%20W11%204SX,%20UK&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <a class="btn btn--secondary btn--block"
+         href="https://www.google.com/maps?q=8%20Swanscombe%20Rd,%20London%20W11%204SX,%20UK"
+         target="_blank">
+         Open in Google Maps
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<%- include("partials/footer") %>

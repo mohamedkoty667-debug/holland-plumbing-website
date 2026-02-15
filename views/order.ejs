@@ -1,0 +1,194 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+<section class="orderHero">
+  <div class="container orderHero__grid">
+    <div class="orderHero__content">
+      <span class="orderBadge">Make an Order</span>
+      <h1>Tell us what you need</h1>
+      <p class="muted">
+        The fastest way is WhatsApp (photos/videos help). Otherwise submit the form and we’ll reply quickly.
+      </p>
+
+      <div class="orderHero__chips">
+        <span class="chip">Fast response</span>
+        <span class="chip">Clear pricing</span>
+        <span class="chip">Quality parts</span>
+      </div>
+    </div>
+
+    <div class="orderHero__side">
+      <div class="orderQuickCard">
+        <div class="orderQuickCard__top">
+          <strong>Phone/WhatsApp</strong>
+          <a class="orderQuickCard__value" href="<%= telLink %>"><%= site.phone %></a>
+        </div>
+
+        <div class="orderQuickCard__meta">
+          <div><span>Company No</span><strong><%= site.companyNumber %></strong></div>
+          <div><span>VAT</span><strong><%= site.vat %></strong></div>
+          <div><span>Area</span><strong><%= site.serviceArea %></strong></div>
+          <div><span>Hours</span><strong><%= site.hours %></strong></div>
+        </div>
+
+        <a class="btn btn--secondary btn--block" href="<%= waLink %>" target="_blank" rel="noopener">
+          WhatsApp us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="orderLayout">
+
+      <!-- FORM CARD -->
+      <div class="panel">
+        <div class="panel__head">
+          <h2>Request form</h2>
+          <p class="muted">Fields marked * are required.</p>
+        </div>
+
+        <% if (errors) { %>
+          <div class="alert alert--error">
+            Please review the highlighted fields.
+          </div>
+        <% } %>
+
+        <form class="formGrid" method="post" action="/make-an-order" novalidate>
+
+          <div class="field">
+            <label for="fullName">Full name *</label>
+            <input
+              id="fullName" name="fullName" type="text"
+              placeholder="Your full name"
+              value="<%= (form && form.fullName) ? form.fullName : '' %>"
+              class="<%= (errors && errors.fullName) ? 'is-error' : '' %>"
+              required
+            >
+            <% if (errors && errors.fullName) { %>
+              <div class="fieldError"><%= errors.fullName %></div>
+            <% } %>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone / WhatsApp *</label>
+            <input
+              id="phone" name="phone" type="text"
+              placeholder="+44..."
+              value="<%= (form && form.phone) ? form.phone : '' %>"
+              class="<%= (errors && errors.phone) ? 'is-error' : '' %>"
+              required
+            >
+            <% if (errors && errors.phone) { %>
+              <div class="fieldError"><%= errors.phone %></div>
+            <% } %>
+          </div>
+
+          <div class="field">
+            <label for="email">Email (optional)</label>
+            <input
+              id="email" name="email" type="email"
+              placeholder="you@email.com"
+              value="<%= (form && form.email) ? form.email : '' %>"
+            >
+          </div>
+
+          <div class="field">
+            <label for="address">Job address (optional)</label>
+            <input
+              id="address" name="address" type="text"
+              placeholder="Postcode / address"
+              value="<%= (form && form.address) ? form.address : '' %>"
+            >
+          </div>
+
+          <div class="field">
+            <label for="serviceType">Service type *</label>
+            <select
+              id="serviceType" name="serviceType"
+              class="<%= (errors && errors.serviceType) ? 'is-error' : '' %>"
+              required
+            >
+              <option value="">Choose a service</option>
+              <option value="Leak repair" <%= form && form.serviceType === 'Leak repair' ? 'selected' : '' %>>Leak repair</option>
+              <option value="Bathroom installation" <%= form && form.serviceType === 'Bathroom installation' ? 'selected' : '' %>>Bathroom installation</option>
+              <option value="Shower / tap replacement" <%= form && form.serviceType === 'Shower / tap replacement' ? 'selected' : '' %>>Shower / tap replacement</option>
+              <option value="Toilet repair" <%= form && form.serviceType === 'Toilet repair' ? 'selected' : '' %>>Toilet repair</option>
+              <option value="Heating / radiator" <%= form && form.serviceType === 'Heating / radiator' ? 'selected' : '' %>>Heating / radiator</option>
+              <option value="Parts enquiry" <%= form && form.serviceType === 'Parts enquiry' ? 'selected' : '' %>>Parts enquiry</option>
+              <option value="Other" <%= form && form.serviceType === 'Other' ? 'selected' : '' %>>Other</option>
+            </select>
+            <% if (errors && errors.serviceType) { %>
+              <div class="fieldError"><%= errors.serviceType %></div>
+            <% } %>
+          </div>
+
+          <div class="field">
+            <label for="preferredDate">Preferred date/time (optional)</label>
+            <input
+              id="preferredDate" name="preferredDate" type="text"
+              placeholder="e.g., Friday 2pm"
+              value="<%= (form && form.preferredDate) ? form.preferredDate : '' %>"
+            >
+          </div>
+
+          <div class="field field--full">
+            <label for="details">Details *</label>
+            <textarea
+              id="details" name="details" rows="6"
+              placeholder="Describe the problem, and include photos/videos on WhatsApp if possible…"
+              class="<%= (errors && errors.details) ? 'is-error' : '' %>"
+              required
+            ><%= (form && form.details) ? form.details : '' %></textarea>
+            <% if (errors && errors.details) { %>
+              <div class="fieldError"><%= errors.details %></div>
+            <% } %>
+          </div>
+
+          <div class="formActions field--full">
+            <button type="submit" class="btn btn--primary">Submit request</button>
+
+            <a class="btn btn--secondary" target="_blank" rel="noopener"
+               href="<%= waLink %>?text=<%= encodeURIComponent(
+                 'Hello, I would like to make an order.\n'
+                 + 'Name: ' + ((form && form.fullName) || '') + '\n'
+                 + 'Phone: ' + ((form && form.phone) || '') + '\n'
+                 + 'Service: ' + ((form && form.serviceType) || '') + '\n'
+                 + 'Preferred: ' + ((form && form.preferredDate) || '') + '\n'
+                 + 'Details: ' + ((form && form.details) || '')
+               ) %>">
+              Send on WhatsApp
+            </a>
+          </div>
+
+          <div class="helpBox field--full">
+            <strong>Tip:</strong> Send photos/videos on WhatsApp for faster diagnosis and a better quote.
+          </div>
+
+        </form>
+      </div>
+
+      <!-- SIDE PANEL -->
+      <aside class="panel panel--side">
+        <div class="sideBlock">
+          <h3>Fastest way</h3>
+          <p class="muted">WhatsApp photos/videos for quicker pricing and booking.</p>
+          <a class="btn btn--secondary btn--block" href="<%= waLink %>" target="_blank" rel="noopener">WhatsApp <%= site.whatsapp %></a>
+        </div>
+
+        <div class="sideBlock sideBlock--soft">
+          <h3>Need a callback?</h3>
+          <p class="muted">Submit the form and we’ll contact you as soon as possible.</p>
+          <a class="btn btn--primary btn--block" href="<%= telLink %>">Call now</a>
+        </div>
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<%- include("partials/footer") %>

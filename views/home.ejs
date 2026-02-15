@@ -1,0 +1,181 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+<!-- =========================
+        HERO SECTION
+========================= -->
+<section class="hero2">
+  <div class="container hero2__grid">
+
+    <div>
+      <h1>Professional Plumbing & Bathroom Solutions</h1>
+      <p class="lead">
+        Reliable service across London • Honest pricing • Quality workmanship.
+      </p>
+
+      <div class="actions">
+        <a href="/make-an-order" class="btn btn--primary">Make an Order</a>
+        <a href="/plumbing-services" class="btn btn--secondary">Our Services</a>
+      </div>
+    </div>
+
+    <div class="hero2__card">
+      <h3>Book a Service</h3>
+      <p class="muted">
+        Send us details or photos on WhatsApp for faster assistance.
+      </p>
+
+      <p><strong>Phone:</strong> <%= site.phone %></p>
+      <p><strong>Company No:</strong> <%= site.companyNumber %></p>
+      <p><strong>VAT:</strong> <%= site.vat %></p>
+
+      <a href="/make-an-order" class="btn btn--primary btn--block">
+        Start an Order
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+        WHY CHOOSE US
+========================= -->
+<section class="section">
+  <div class="container">
+    <div class="whyChooseWrap">
+      <h2 class="whyChooseTitle">Why Choose Us</h2>
+
+      <div class="whyChooseGrid">
+        <div class="whyCard revealUp">
+          <div class="whyIcon">✓</div>
+          <h3>Tidy workmanship</h3>
+          <p>We protect surfaces, clean up properly, and finish the job neatly — no mess left behind.</p>
+        </div>
+
+        <div class="whyCard revealUp">
+          <div class="whyIcon">£</div>
+          <h3>Clear pricing</h3>
+          <p>We explain the issue and options before we start, so you know what you’re paying for.</p>
+        </div>
+
+        <div class="whyCard revealUp">
+          <div class="whyIcon">★</div>
+          <h3>Quality parts</h3>
+          <p>We use trusted brands and reliable fittings to reduce failures and avoid repeat callouts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+        WHAT WE DO (GRID)
+========================= -->
+<section class="section whatwedo">
+  <div class="container">
+
+    <h2 class="section-title">What We Can Do</h2>
+    <p class="muted whatwedo-sub">
+      Plumbing repairs, bathroom upgrades, heating support and supply of quality parts — across London.
+    </p>
+
+    <div class="mosaic">
+
+      <!-- Tile 1: Image -->
+      <a class="mosaicTile mosaicImg" href="/plumbing-services">
+        <img src="/image/whatwedo/repairs.jpg" alt="Leak fixes and pipe repairs">
+        <div class="mosaicTag">Repairs</div>
+      </a>
+
+      <!-- Tile 2: Text -->
+      <a class="mosaicTile mosaicText" href="/plumbing-services">
+        <h3>Leak fixes & pipe repairs</h3>
+        <p>
+          Stop leaks fast, replace damaged sections, improve pressure, and prevent repeat issues.
+        </p>
+        <span class="mosaicLink">Explore services →</span>
+      </a>
+
+      <!-- Tile 3: Image -->
+      <a class="mosaicTile mosaicImg" href="/plumbing-services">
+        <img src="/image/whatwedo/bathroom.jpg" alt="Bathroom installations and upgrades">
+        <div class="mosaicTag">Bathrooms</div>
+      </a>
+
+      <!-- Tile 4: Text -->
+      <a class="mosaicTile mosaicText" href="/plumbing-services">
+        <h3>Bathroom installations</h3>
+        <p>
+          Taps, showers, toilets, basins, and full upgrades — fitted neatly with quality materials.
+        </p>
+        <span class="mosaicLink">See bathroom work →</span>
+      </a>
+
+      <!-- Tile 5: Image (wide) -->
+      <a class="mosaicTile mosaicImg mosaicWide" href="/plumbing-services">
+        <img src="/image/whatwedo/heating.jpg" alt="Heating support and radiator work">
+        <div class="mosaicTag">Heating</div>
+      </a>
+
+      <!-- Tile 6: Text -->
+      <a class="mosaicTile mosaicText" href="/our-stock">
+        <h3>Supply & trusted parts</h3>
+        <p>
+          We stock and source trusted brands — valves, traps, fittings, heating controls and more.
+        </p>
+        <span class="mosaicLink">Browse stock →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+        PREMIUM BRAND SLIDER
+========================= -->
+<section class="section brandsPro">
+  <div class="container">
+    <h2 class="section-title">Brands We Work With</h2>
+
+    <div class="brandSlider">
+      <div class="brandTrack">
+
+        <!-- Track A -->
+        <div class="brandRow">
+          <div class="brandItem"><img src="/image/brands/grohe.png" alt="Grohe"></div>
+          <div class="brandItem"><img src="/image/brands/hansgrohe.png" alt="Hansgrohe"></div>
+          <div class="brandItem"><img src="/image/brands/geberit.png" alt="Geberit"></div>
+          <div class="brandItem"><img src="/image/brands/ariston.png" alt="Ariston"></div>
+          <div class="brandItem"><img src="/image/brands/vaillant.png" alt="Vaillant"></div>
+          <div class="brandItem"><img src="/image/brands/baxi.png" alt="Baxi"></div>
+          <div class="brandItem"><img src="/image/brands/worcester-bosch.png" alt="Worcester Bosch"></div>
+          <div class="brandItem"><img src="/image/brands/mcalpine.png" alt="McAlpine"></div>
+          <div class="brandItem"><img src="/image/brands/honeywell.png" alt="Honeywell"></div>
+          <div class="brandItem"><img src="/image/brands/heatmiser.png" alt="Heatmiser"></div>
+          <div class="brandItem"><img src="/image/brands/glow-worm.png" alt="Glow Worm"></div>
+          <div class="brandItem"><img src="/image/brands/crosswater.png" alt="Crosswater"></div>
+        </div>
+
+        <!-- Track B (نسخة مكررة عشان الحركة تبقى لا نهائية) -->
+        <div class="brandRow">
+          <div class="brandItem"><img src="/image/brands/grohe.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/hansgrohe.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/geberit.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/ariston.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/vaillant.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/baxi.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/worcester-bosch.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/mcalpine.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/honeywell.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/heatmiser.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/glow-worm.png" alt=""></div>
+          <div class="brandItem"><img src="/image/brands/crosswater.png" alt=""></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

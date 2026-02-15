@@ -1,0 +1,14 @@
+{
+  "name": "holland-plumbing-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^4.22.1"
+  }
+}

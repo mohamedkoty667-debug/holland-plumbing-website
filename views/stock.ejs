@@ -1,0 +1,32 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+<section class="section latestWorkHero">
+  <div class="container">
+    <span class="sectionTag">Latest Work</span>
+    <h1>Real jobs. Clean finish.</h1>
+    <p>
+      Recent plumbing & bathroom projects across London.
+      Tap any photo to view.
+    </p>
+
+    <div class="heroButtons">
+      <a href="/make-an-order" class="btnPrimary">Make an Order</a>
+      <a href="<%= waLink %>" class="btnOutline">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section latestWorkSection">
+  <div class="container">
+    <div class="workGrid">
+      <% (latestWork || []).forEach((job) => { %>
+        <article class="workCard reveal">
+          <img src="<%= job.image %>" alt="Latest plumbing work">
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

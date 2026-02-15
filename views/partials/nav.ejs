@@ -1,0 +1,73 @@
+<header class="header" id="siteHeader">
+  <div class="container header__row">
+
+    <a class="brand" href="/">
+      <img src="/image/logo.png" alt="Holland Bathroom and Plumbing Logo" class="brand__logo" />
+      <span class="brand__text">
+        <span class="brand__name"><%= site.name %></span>
+        <span class="brand__meta">
+          Company No: <%= site.companyNumber %> • VAT: <%= site.vat %>
+        </span>
+      </span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navToggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav" aria-label="Primary">
+      <div class="nav__menu" id="navMenu">
+        <a class="nav__link <%= path==='/' ? 'is-active' : '' %>" href="/">Home</a>
+        <a class="nav__link <%= path==='/services' ? 'is-active' : '' %>" href="/services">Services</a>
+        <a class="nav__link <%= path==='/our-stock' ? 'is-active' : '' %>" href="/our-stock">Latest Work</a>
+        <a class="nav__link <%= path==='/about' ? 'is-active' : '' %>" href="/about">About</a>
+        <a class="nav__link <%= path==='/contact' ? 'is-active' : '' %>" href="/contact">Contact</a>
+
+        <a class="btn btn--primary nav__cta" href="/make-an-order">Make an Order</a>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<!-- Mobile menu script -->
+<script>
+  (function () {
+    const btn = document.getElementById("navToggle");
+    const menu = document.getElementById("navMenu");
+
+    if (!btn || !menu) return;
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+
+    btn.addEventListener("click", () => {
+      const open = menu.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("menu-open", open);
+    });
+
+    // Close on link click (mobile)
+    menu.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
+      if (!a) return;
+      closeMenu();
+    });
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!menu.classList.contains("is-open")) return;
+      const inside = e.target.closest("#navMenu") || e.target.closest("#navToggle");
+      if (!inside) closeMenu();
+    });
+  })();
+</script>

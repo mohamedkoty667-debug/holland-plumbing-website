@@ -1,0 +1,172 @@
+<%- include("partials/head", { pageTitle }) %>
+<%- include("partials/nav") %>
+
+<section class="servicesHero">
+  <div class="container">
+    <div class="servicesHero__card revealUp">
+      <span class="pill">Services</span>
+      <h1 class="h1">Plumbing & bathroom services — done properly.</h1>
+      <p class="lead">
+        Fast response across <%= site.serviceArea %>. Clean workmanship, clear pricing, and trusted parts.
+      </p>
+
+      <div class="servicesHero__cta">
+        <a class="btn btnPrimary" href="/make-an-order">Make an Order</a>
+        <a class="btn btnSoft" href="<%= waLink %>" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="servicesStats">
+        <div class="stat">
+          <div class="stat__big">24/7</div>
+          <div class="stat__small">By appointment</div>
+        </div>
+        <div class="stat">
+          <div class="stat__big">London</div>
+          <div class="stat__small">& surrounding areas</div>
+        </div>
+        <div class="stat">
+          <div class="stat__big">Quality</div>
+          <div class="stat__small">Trusted brands</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sectionHead revealUp">
+      <h2 class="h2">What we can help with</h2>
+      <p class="muted">Tap a card to see details. All work is finished cleanly and tested before we leave.</p>
+    </div>
+
+    <div class="servicesGrid">
+      <!-- 1 -->
+      <article class="serviceCard revealUp" style="--bg:url('/image/services/emergency.jpg')">
+        <div class="serviceCard__overlay"></div>
+        <div class="serviceCard__content">
+          <span class="serviceTag">Fast response</span>
+          <h3>Emergency plumbing</h3>
+          <p>Leaks, bursts, urgent fixes — quick attendance when possible.</p>
+          <ul>
+            <li>Stop leaks & isolate issues</li>
+            <li>Replace failed parts</li>
+            <li>Make safe & restore pressure</li>
+          </ul>
+          <a class="serviceLink" href="/make-an-order">Request help →</a>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="serviceCard revealUp" style="--bg:url('/image/services/bathroom.jpg')">
+        <div class="serviceCard__overlay"></div>
+        <div class="serviceCard__content">
+          <span class="serviceTag">Neat install</span>
+          <h3>Bathroom installation</h3>
+          <p>Showers, toilets, basins, taps — installed properly and aligned cleanly.</p>
+          <ul>
+            <li>Tap & mixer installs</li>
+            <li>Toilet fitting / replacement</li>
+            <li>Shower upgrades</li>
+          </ul>
+          <a class="serviceLink" href="/make-an-order">Book installation →</a>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="serviceCard revealUp" style="--bg:url('/image/services/leak.jpg')">
+        <div class="serviceCard__overlay"></div>
+        <div class="serviceCard__content">
+          <span class="serviceTag">Fault finding</span>
+          <h3>Leak & pipe repairs</h3>
+          <p>Trace the cause, repair properly, and prevent repeat callouts.</p>
+          <ul>
+            <li>Pipework repairs</li>
+            <li>Valve replacements</li>
+            <li>Pressure issues</li>
+          </ul>
+          <a class="serviceLink" href="/make-an-order">Get a quote →</a>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="serviceCard revealUp" style="--bg:url('/image/services/drainage.jpg')">
+        <div class="serviceCard__overlay"></div>
+        <div class="serviceCard__content">
+          <span class="serviceTag">Unblock & fix</span>
+          <h3>Drainage</h3>
+          <p>Blockages, waste pipes, traps, maintenance — keep it flowing.</p>
+          <ul>
+            <li>Blocked sinks & baths</li>
+            <li>Trap & waste replacements</li>
+            <li>Odours & slow drainage</li>
+          </ul>
+          <a class="serviceLink" href="/make-an-order">Fix drainage →</a>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="serviceCard revealUp" style="--bg:url('/image/services/heating.jpg')">
+        <div class="serviceCard__overlay"></div>
+        <div class="serviceCard__content">
+          <span class="serviceTag">Comfort</span>
+          <h3>Heating plumbing</h3>
+          <p>Radiators, TRVs, valves, circulation issues — diagnosed and solved.</p>
+          <ul>
+            <li>Radiator installs</li>
+            <li>TRV / valve replacement</li>
+            <li>Bleeding & balancing</li>
+          </ul>
+          <a class="serviceLink" href="/make-an-order">Book heating work →</a>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="serviceCard revealUp" style="--bg:url('/image/services/maintenance.jpg')">
+        <div class="serviceCard__overlay"></div>
+        <div class="serviceCard__content">
+          <span class="serviceTag">Planned upkeep</span>
+          <h3>Maintenance</h3>
+          <p>Landlords & businesses — keep properties running smoothly.</p>
+          <ul>
+            <li>Regular checks</li>
+            <li>Small fixes & replacements</li>
+            <li>Quick turnaround</li>
+          </ul>
+          <a class="serviceLink" href="/make-an-order">Arrange maintenance →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="servicesBottomCTA revealUp">
+      <div class="servicesBottomCTA__card">
+        <div>
+          <h3 class="h3">Fast quote on WhatsApp</h3>
+          <p class="muted">Send photos/videos for quicker diagnosis and pricing.</p>
+        </div>
+        <div class="servicesBottomCTA__actions">
+          <a class="btn btnPrimary" href="<%= waLink %>" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btnSoft" href="/make-an-order">Make an Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Reveal animation on scroll
+  (function () {
+    const els = document.querySelectorAll(".revealUp");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+<%- include("partials/footer") %>

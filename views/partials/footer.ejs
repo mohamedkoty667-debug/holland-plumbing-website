@@ -1,0 +1,55 @@
+<footer class="siteFooter">
+  <div class="container siteFooter__inner">
+    <div class="siteFooter__top">
+      <div class="siteFooter__brand">
+        <img src="/image/logo.png" alt="Holland Bathroom and Plumbing" class="siteFooter__logo" />
+        <div>
+          <div class="siteFooter__name"><%= site.name %></div>
+          <div class="siteFooter__meta">
+            Company No: <%= site.companyNumber %> • VAT: <%= site.vat %>
+          </div>
+        </div>
+      </div>
+
+      <div class="siteFooter__links">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/our-stock">Latest Work</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+      <div class="siteFooter__contact">
+        <div><strong>Phone/WhatsApp:</strong> <a href="<%= telLink %>"><%= site.phone %></a></div>
+        <div><strong>Service Area:</strong> <%= site.serviceArea %></div>
+        <div><strong>Hours:</strong> <%= site.hours %></div>
+      </div>
+    </div>
+
+    <div class="siteFooter__bottom">
+      <span>© <%= new Date().getFullYear() %> <%= site.name %>. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Global reveal animation (works for ALL pages)
+  (function () {
+    const els = document.querySelectorAll(".revealUp");
+    if (!els.length) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>

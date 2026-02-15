@@ -1,0 +1,30 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+<main id="content">
+  <section class="pageHero">
+    <div class="container reveal">
+      <h1>Thank you ✅</h1>
+      <p class="lead">We received your request. We’ll contact you soon.</p>
+
+      <div class="card reveal">
+        <h2>Order reference</h2>
+        <p><strong><%= record.id %></strong> • <span class="muted"><%= record.createdAt %></span></p>
+        <hr class="hr" />
+        <p><strong>Name:</strong> <%= record.fullName %></p>
+        <p><strong>Phone:</strong> <%= record.phone %></p>
+        <% if (record.email) { %><p><strong>Email:</strong> <%= record.email %></p><% } %>
+        <p><strong>Service:</strong> <%= record.serviceType %></p>
+        <% if (record.preferredDate) { %><p><strong>Preferred:</strong> <%= record.preferredDate %></p><% } %>
+        <p><strong>Details:</strong> <%= record.details %></p>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn--primary" href="/">Back Home</a>
+        <a class="btn btn--secondary" href="/our-stock">Browse Stock</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>
